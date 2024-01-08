@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "dxR708vN96E8rV9qSwXzjg+G6MUTp61d3U3GXAFEcdoAX5JpIShHl/MtSRHIpoiVK3nj1pM5kOFSQyU6mqIS5w==",
+  "dgSpecHash": "8P4oiKEaWQHg/A8xuBeZDXzDh00b1+DbfKgUoPm1mb8CgRd9D7t2CHNFU3pqNVHEJ1X+D30V+vx44SrNzBR+7A==",
   "success": true,
-  "projectFilePath": "c:\\Dev\\dotNet-Learning\\Back\\src\\ProEventos.API\\ProEventos.API.csproj",
+  "projectFilePath": "C:\\Dev\\dotNet-Learning\\Back\\src\\ProEventos.API\\ProEventos.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\gabri\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\gabri\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
