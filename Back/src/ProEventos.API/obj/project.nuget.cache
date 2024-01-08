@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "QT4N2wxbH4qyTjXmVXrVsPDnXB1TcyHIuNEwDIwrI0wOYrSctu4uD5gaFYFRcFlv3szIJe/tE9o9w5YVp6MikA==",
+  "dgSpecHash": "MExF20zoEmJTcVV7/o4DDZY3h+PCw7IO8M06LoKBUzof+lcwIkXHDWlVrHooCxLI9Bf7Pg0Bg5WwHrHxs15E6A==",
   "success": true,
-  "projectFilePath": "Z:\\Dev\\dotNet-Learning\\Back\\src\\ProEventos.API\\ProEventos.API.csproj",
+  "projectFilePath": "C:\\Dev\\dotNet-Learning\\Back\\src\\ProEventos.API\\ProEventos.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\gabri\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\gabri\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",

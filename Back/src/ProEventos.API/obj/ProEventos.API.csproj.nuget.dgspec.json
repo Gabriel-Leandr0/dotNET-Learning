@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "Z:\\Dev\\dotNet-Learning\\Back\\src\\ProEventos.API\\ProEventos.API.csproj": {}
+    "C:\\Dev\\dotNet-Learning\\Back\\src\\ProEventos.API\\ProEventos.API.csproj": {}
   },
   "projects": {
-    "Z:\\Dev\\dotNet-Learning\\Back\\src\\ProEventos.API\\ProEventos.API.csproj": {
+    "C:\\Dev\\dotNet-Learning\\Back\\src\\ProEventos.API\\ProEventos.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "Z:\\Dev\\dotNet-Learning\\Back\\src\\ProEventos.API\\ProEventos.API.csproj",
+        "projectUniqueName": "C:\\Dev\\dotNet-Learning\\Back\\src\\ProEventos.API\\ProEventos.API.csproj",
         "projectName": "ProEventos.API",
-        "projectPath": "Z:\\Dev\\dotNet-Learning\\Back\\src\\ProEventos.API\\ProEventos.API.csproj",
+        "projectPath": "C:\\Dev\\dotNet-Learning\\Back\\src\\ProEventos.API\\ProEventos.API.csproj",
         "packagesPath": "C:\\Users\\gabri\\.nuget\\packages\\",
-        "outputPath": "Z:\\Dev\\dotNet-Learning\\Back\\src\\ProEventos.API\\obj\\",
+        "outputPath": "C:\\Dev\\dotNet-Learning\\Back\\src\\ProEventos.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\gabri\\AppData\\Roaming\\NuGet\\NuGet.Config"
