@@ -28,7 +28,7 @@ namespace ProEventos.API
         //  configurar os serviços que serão utilizados pela aplicação
         public void ConfigureServices(IServiceCollection services)
         {
-            //Realiza configuração do bbanco de dados
+            //Realiza configuração do banco de dados
             //Default = appsettings.Development
             services.AddDbContext<DataContext>(
                 context  => context.UseSqlite(Configuration.GetConnectionString("Default"))
