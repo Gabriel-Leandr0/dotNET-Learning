@@ -8,8 +8,8 @@ using ProEventos.API.Data;
 namespace ProEventos.API.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20240108021045_Initial")]
-    partial class Initial
+    [Migration("20240109012538_ProEventos")]
+    partial class ProEventos
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -17,9 +17,9 @@ namespace ProEventos.API.Data.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "5.0.17");
 
-            modelBuilder.Entity("ProEventos.API.Model.Evento", b =>
+            modelBuilder.Entity("ProEventos.API.Model.Eventos", b =>
                 {
-                    b.Property<int>("EventoId")
+                    b.Property<int>("EventosId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
@@ -41,7 +41,7 @@ namespace ProEventos.API.Data.Migrations
                     b.Property<string>("Tema")
                         .HasColumnType("TEXT");
 
-                    b.HasKey("EventoId");
+                    b.HasKey("EventosId");
 
                     b.ToTable("Eventos");
                 });

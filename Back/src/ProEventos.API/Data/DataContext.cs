@@ -13,6 +13,6 @@ namespace ProEventos.API.Data
         {
             
         }
-        public DbSet<Evento> Eventos { get; set; }   
+    public DbSet<Eventos> Eventos { get; set; }
     }
 }

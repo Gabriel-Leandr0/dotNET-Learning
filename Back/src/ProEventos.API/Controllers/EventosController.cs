@@ -10,26 +10,26 @@ using ProEventos.API.Model;
 namespace ProEventos.API.Controllers
 {
     [ApiController]
-    [Route("api/evento")]
-    public class EventoController : ControllerBase
+    [Route("api/eventos")]
+    public class EventosController : ControllerBase
     {
         private readonly DataContext context;
-        public EventoController(DataContext context)
+        public EventosController(DataContext context)
         {
             this.context = context;
 
         }
 
         [HttpGet]
-        public IEnumerable<Evento> Get()
+        public IEnumerable<Eventos> Get()
         {
             return context.Eventos;
         }
 
         [HttpGet("{id}")]
-        public Evento GetByID(int id)
+        public Eventos GetByID(int id)
         {
-            return context.Eventos.FirstOrDefault(evento => evento.EventoId == id );
+            return context.Eventos.FirstOrDefault(evento => evento.EventosId == id );
         }
 
         [HttpPost]

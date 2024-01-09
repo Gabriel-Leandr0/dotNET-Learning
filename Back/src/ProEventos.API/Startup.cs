@@ -34,7 +34,12 @@ namespace ProEventos.API
                 context  => context.UseSqlite(Configuration.GetConnectionString("Default"))
             );
 
+            //Configura o padrão de retorno da API para JSON
             services.AddControllers();
+
+            //Permite que qualquer aplicação acesse a API
+            services.AddCors();
+            
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ProEventos.API", Version = "v1" });
@@ -51,11 +56,19 @@ namespace ProEventos.API
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "ProEventos.API v1"));
             }
 
+            //app.UseHttpsRedirection() redireciona para https
             app.UseHttpsRedirection();
 
+            //Define o padrão de rota da API
             app.UseRouting();
 
+            //Define o padrão de autorização da API
             app.UseAuthorization();
+
+            //Permite que qualquer aplicação acesse a API
+            app.UseCors(cors => cors.AllowAnyHeader()
+                                    .AllowAnyMethod()
+                                    .AllowAnyOrigin());
 
             app.UseEndpoints(endpoints =>
             {
