@@ -1,3 +1,8 @@
-<p>eventos works!</p>
-
 <h1>Eventos Component</h1>
+
+<div *ngFor="let evento of eventos">
+  <p>{{ evento.Nome }}</p>
+  <p>{{ evento.Tema }}</p>
+  <p>{{ evento.Local }}</p>
+  <hr />
+</div>
