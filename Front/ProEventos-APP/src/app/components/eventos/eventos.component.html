@@ -1,18 +1,17 @@
 <h2>Eventos</h2>
 <hr />
-<div>
+<div form-inline>
   <div class="form-group mb-2">
+    <label for="filtroLista">Filtro:</label>
     <input 
     type="text" 
-    class="form-control mr-2" 
+    class="form-inline" 
     placeholder="Pesquisar" 
     [(ngModel)]="filtroLista"
     
     />
-    <button type="button" class="btn btn-outline-success">Pesquisar</button>
   </div>
 </div>
-<h3>Filtro: {{filtroLista}}</h3>
 <table class="table table-striped">
   <thead class="thead-dark">
     <tr align="center">
