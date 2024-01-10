@@ -1,11 +1,68 @@
-<h1>Eventos Component</h1>
-<!-- *ngFor = cada evento da lista de objetos eventos -->
-<div *ngFor="let evento of eventos">
-  <p>Tema: {{ evento.tema }}</p>
-  <p>Local: {{ evento.local }}</p>
-  <p>Data: {{ evento.dataEvento }}</p>
-  <p>Quantidad de pessoas: {{ evento.qtdPessoas }}</p>  
-  <p>Lote: {{ evento.lote }}</p>
-  <p>Imagem: {{ evento.imagemURL }}</p>
-  <hr />
-</div>
+<h2>Eventos</h2>
+<hr />
+<form action="" class="form-inline">
+  <div class="form-group mb-2">
+    <input type="text" class="form-control mr-2" placeholder="Pesquisar" />
+    <button type="button" class="btn btn-outline-success">Pesquisar</button>
+  </div>
+</form>
+
+<table class="table table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th>#</th>
+      <th>Imagem</th>
+      <th>Tema</th>
+      <th>Local</th>
+      <th>Data</th>
+      <th>Qtd Participantes</th>
+      <th>Lote</th>
+      <th>Opções</th>
+    </tr>
+  </thead>
+  <tbody *ngIf="eventos && eventos.length">
+    <tr *ngFor="let evento of eventos">
+      <td>{{ evento.eventosId }}</td>
+      <td>
+        <img
+          src="assets/{{ evento.imagemURL }}"
+          alt="imagem do evento"
+          [style.width.px]="widthImg"
+          [style.marginRight.px]="marginImg"
+        />
+      </td>
+      <td>{{ evento.tema }}</td>
+      <td>{{ evento.local }}</td>
+      <td>{{ evento.dataEvento }}</td>
+      <td>{{ evento.qtdPessoas }}</td>
+      <td>{{ evento.lote }}</td>
+      <td>
+        <div class="dropdown">
+          <button
+            title="Opções"
+            class="btn btn-secondary dropdown-toggle"
+            type="button"
+            id="dropdownMenuButton"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            <i class="fa-solid fa-gear"></i>
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item">Action</a>
+            <a class="dropdown-item">Another action</a>
+            <a class="dropdown-item">Something else here</a>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+  <tfoot *ngIf="!eventos.length">
+    <tr>
+      <td colspan="8" class="text-center">
+        <h4>Nenhum evento encontrado</h4>
+      </td>
+    </tr>
+  </tfoot>
+</table>

@@ -10,11 +10,11 @@
         "projectUniqueName": "C:\\Dev\\dotNet-Learning\\Back\\src\\ProEventos.API\\ProEventos.API.csproj",
         "projectName": "ProEventos.API",
         "projectPath": "C:\\Dev\\dotNet-Learning\\Back\\src\\ProEventos.API\\ProEventos.API.csproj",
-        "packagesPath": "C:\\Users\\GabrielLeandrodeSant\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\gabri\\.nuget\\packages\\",
         "outputPath": "C:\\Dev\\dotNet-Learning\\Back\\src\\ProEventos.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\GabrielLeandrodeSant\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\gabri\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"

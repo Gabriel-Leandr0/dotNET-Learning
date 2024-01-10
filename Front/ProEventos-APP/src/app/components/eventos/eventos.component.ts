@@ -6,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./eventos.component.scss'],
 })
 export class EventosComponent implements OnInit {
-  public eventos: any;
+  public eventos: any = [];
+  widthImg: number = 150;
+  marginImg: number = 2;
 
   constructor(private http: HttpClient) {}
 
@@ -20,4 +22,5 @@ export class EventosComponent implements OnInit {
       error => console.log(error)
     );
   }
+  
 }
