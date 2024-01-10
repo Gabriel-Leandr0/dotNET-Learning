@@ -1,17 +1,46 @@
 <h2>Eventos</h2>
 <hr />
-<form action="" class="form-inline">
+<div>
   <div class="form-group mb-2">
-    <input type="text" class="form-control mr-2" placeholder="Pesquisar" />
+    <input 
+    type="text" 
+    class="form-control mr-2" 
+    placeholder="Pesquisar" 
+    [(ngModel)]="filtroLista"
+    
+    />
     <button type="button" class="btn btn-outline-success">Pesquisar</button>
   </div>
-</form>
-
+</div>
+<h3>Filtro: {{filtroLista}}</h3>
 <table class="table table-striped">
   <thead class="thead-dark">
-    <tr>
+    <tr align="center">
+      
+      <th>
+        <button
+          title="Exibir Imagem"
+          class="navbar-toggler"
+          (click)="alterarImagem()"
+          type="button"
+        >
+          <span
+            [ngClass]="{
+              'show-img': exibirImagem,
+              'hidden-img': !exibirImagem
+            }"
+          >
+            <i
+              class="fa-solid"
+              [ngClass]="{
+                'fa-eye': exibirImagem,
+                'fa-eye-slash': !exibirImagem
+              }"
+            ></i>
+          </span>
+        </button>
+      </th>
       <th>#</th>
-      <th>Imagem</th>
       <th>Tema</th>
       <th>Local</th>
       <th>Data</th>
@@ -21,16 +50,23 @@
     </tr>
   </thead>
   <tbody *ngIf="eventos && eventos.length">
-    <tr *ngFor="let evento of eventos">
-      <td>{{ evento.eventosId }}</td>
+    <tr *ngFor="let evento of eventosFiltrados" align="center">
       <td>
-        <img
-          src="assets/{{ evento.imagemURL }}"
-          alt="imagem do evento"
-          [style.width.px]="widthImg"
-          [style.marginRight.px]="marginImg"
-        />
+        <div
+          class="collapse navbar-collapse"
+          [collapse]="exibirImagem"
+          [isAnimated]="true"
+        >
+          <img
+            src="assets/{{ evento.imagemURL }}"
+            alt="imagem do evento"
+            [style.width.px]="widthImg"
+            [style.marginRight.px]="marginImg"
+            [style.height.px]="heightImg"
+          />
+        </div>
       </td>
+      <td>{{ evento.eventosId }}</td>
       <td>{{ evento.tema }}</td>
       <td>{{ evento.local }}</td>
       <td>{{ evento.dataEvento }}</td>
