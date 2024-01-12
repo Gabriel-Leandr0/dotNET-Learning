@@ -55,3 +55,9 @@ C:\Dev\dotNet-Learning\Back\src\ProEventos.API\obj\Debug\net5.0\scopedcss\bundle
 C:\Dev\dotNet-Learning\Back\src\ProEventos.API\obj\Debug\net5.0\ProEventos.API.RazorTargetAssemblyInfo.cache
 C:\Dev\dotNet-Learning\Back\src\ProEventos.API\obj\Debug\net5.0\ProEventos.API.csproj.CopyComplete
 C:\Dev\dotNet-Learning\Back\src\ProEventos.API\obj\Debug\net5.0\ProEventos.API.genruntimeconfig.cache
+C:\Dev\dotNet-Learning\Back\src\ProEventos.API\bin\Debug\net5.0\ProEventos.Application.dll
+C:\Dev\dotNet-Learning\Back\src\ProEventos.API\bin\Debug\net5.0\ProEventos.Domain.dll
+C:\Dev\dotNet-Learning\Back\src\ProEventos.API\bin\Debug\net5.0\ProEventos.Persistence.dll
+C:\Dev\dotNet-Learning\Back\src\ProEventos.API\bin\Debug\net5.0\ProEventos.Application.pdb
+C:\Dev\dotNet-Learning\Back\src\ProEventos.API\bin\Debug\net5.0\ProEventos.Domain.pdb
+C:\Dev\dotNet-Learning\Back\src\ProEventos.API\bin\Debug\net5.0\ProEventos.Persistence.pdb

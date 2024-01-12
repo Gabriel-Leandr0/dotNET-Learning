@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -13,6 +14,8 @@ namespace ProEventos.Domain
         public DateTime? DataInicio { get; set; }
         public DateTime? DataFim {get; set;}
         public int Quantidade { get; set; }
+
+        [ForeignKey("IdEvento")]
         public int IdEvento { get; set; }
         public Evento Evento { get; set; }
 

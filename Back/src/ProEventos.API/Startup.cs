@@ -12,7 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using ProEventos.API.Data;
+using ProEventos.Persistence;
 
 namespace ProEventos.API
 {
@@ -30,7 +30,7 @@ namespace ProEventos.API
         {
             //Realiza configuração do banco de dados
             //Default = appsettings.Development
-            services.AddDbContext<DataContext>(
+            services.AddDbContext<ProEventosContext>(
                 context  => context.UseSqlite(Configuration.GetConnectionString("Default"))
             );
 
