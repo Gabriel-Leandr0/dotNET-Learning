@@ -4,52 +4,21 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using ProEventos.Domain;
-
+using ProEventos.Persistence.Contexts;
+using ProEventos.Persistence.Interfaces;
 
 namespace ProEventos.Persistence
 {
     // A classe ProEventosPersistence serve para utilizar os métodos da interface IProEventosPersistence
-    public class ProEventosPersistence : IProEventosPersistence
+    public class PalestrantePersist : IPalestrantePersist
     {
         private readonly ProEventosContext _context;
-        public ProEventosPersistence(ProEventosContext context)
+        public PalestrantePersist(ProEventosContext context)
         {
             // Injeção de dependência
             _context = context;
 
         }
-        
-        // Geral
-        public void Add<T>(T entity) where T : class
-        {
-            // O Add recebe uma entidade
-            _context.Add(entity);
-        }
-
-        public void Update<T>(T entity) where T : class
-        {
-            // O Update recebe uma entidade
-            _context.Update(entity);
-        }
-
-        public void Delete<T>(T entity) where T : class
-        {
-            // O Remove recebe uma entidade
-            _context.Remove(entity);
-        }
-
-        public void DeleteRange<T>(T[] entityArray) where T : class
-        {
-            // O RemoveRange recebe um array de entidades
-            _context.RemoveRange(entityArray);
-        }
-
-        public async Task<bool> SaveChangesAsync()
-        {
-            // Se o retorno for maior que 0, significa que houve alteração no banco de dados
-            return (await _context.SaveChangesAsync()) > 0;
-        }
-
         // Eventos
         public async Task<Evento[]> GetAllEventosAsync(bool includePalestrantes = false)
         {
@@ -118,19 +87,63 @@ namespace ProEventos.Persistence
 
         // Palestrantes
 
-        public Task<Palestrante[]> GetAllPalestrantesAsync(int palestranteId, bool includeEventos = false)
+        public async Task<Palestrante[]> GetAllPalestrantesAsync(bool includeEventos = false)
         {
-            throw new NotImplementedException();
+            // O Include é utilizado para incluir os palestrantes e redes sociais
+            IQueryable<Palestrante> query = _context.Palestrantes
+                .Include(p => p.RedesSociais);
+
+            // Se includePalestrantes for true, inclui os palestrantes
+            if (includeEventos)
+            {
+                query = query
+                    .Include(p => p.PalestrantesEventos)
+                    .ThenInclude(pe => pe.Evento);
+            }
+            // O OrderBy ordena por Id
+            query = query.OrderBy(p => p.Id);
+
+            return await query.ToArrayAsync();
         }
 
         public Task<Palestrante[]> GetAllPalestrantesAsyncByName(string nome, bool includeEventos = false)
         {
-            throw new NotImplementedException();
+            // O Include é utilizado para incluir os palestrantes e redes sociais
+            IQueryable<Palestrante> query = _context.Palestrantes
+                .Include(p => p.RedesSociais);
+
+            // Se includePalestrantes for true, inclui os palestrantes
+            if (includeEventos)
+            {
+                query = query
+                    .Include(p => p.PalestrantesEventos)
+                    .ThenInclude(pe => pe.Evento);
+            }
+
+            query = query.OrderBy(p => p.Id)
+            .Where(p => p.Nome.ToLower().Contains(nome.ToLower()));
+
+            return query.ToArrayAsync();
         }
 
-        public Task<Palestrante> GetPalestranteByIdAsync(int palestranteId, bool includeEventos = false)
+        public Task<Palestrante> GetPalestranteByIdAsync(int idPalestrante, bool includeEventos = false)
         {
-            throw new NotImplementedException();
+                        // O Include é utilizado para incluir os palestrantes e redes sociais
+            IQueryable<Palestrante> query = _context.Palestrantes
+                .Include(p => p.RedesSociais);
+
+            // Se includePalestrantes for true, inclui os palestrantes
+            if (includeEventos)
+            {
+                query = query
+                    .Include(p => p.PalestrantesEventos)
+                    .ThenInclude(pe => pe.Evento);
+            }
+
+            query = query.OrderBy(p => p.Id)
+            .Where(p => p.Id == idPalestrante);
+                        
+            return query.FirstOrDefaultAsync(p => p.Id == idPalestrante);
         }
 
 
