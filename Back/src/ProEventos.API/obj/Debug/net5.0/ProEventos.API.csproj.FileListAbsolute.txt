@@ -61,3 +61,7 @@ C:\Dev\dotNet-Learning\Back\src\ProEventos.API\bin\Debug\net5.0\ProEventos.Persi
 C:\Dev\dotNet-Learning\Back\src\ProEventos.API\bin\Debug\net5.0\ProEventos.Application.pdb
 C:\Dev\dotNet-Learning\Back\src\ProEventos.API\bin\Debug\net5.0\ProEventos.Domain.pdb
 C:\Dev\dotNet-Learning\Back\src\ProEventos.API\bin\Debug\net5.0\ProEventos.Persistence.pdb
+C:\Dev\dotNet-Learning\Back\src\ProEventos.API\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Dev\dotNet-Learning\Back\src\ProEventos.API\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Dev\dotNet-Learning\Back\src\ProEventos.API\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\Dev\dotNet-Learning\Back\src\ProEventos.API\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll

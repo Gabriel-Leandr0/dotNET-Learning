@@ -12,8 +12,11 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using ProEventos.Application.Interfaces;
+using ProEventos.Application.Services;
 using ProEventos.Persistence;
 using ProEventos.Persistence.Contexts;
+using ProEventos.Persistence.Interfaces;
 
 namespace ProEventos.API
 {
@@ -35,8 +38,21 @@ namespace ProEventos.API
                 context  => context.UseSqlite(Configuration.GetConnectionString("Default"))
             );
 
-            //Configura o padrão de retorno da API para JSON
-            services.AddControllers();
+            //Configura o retorno do JSON
+            services.AddControllers()
+
+            //Ignora o loop de referência, necesario instalar o pacote NewtonsoftJson (Microsoft.aspnetcore.mvc.newtonsoftjson)
+                .AddNewtonsoftJson(
+                    x => x.SerializerSettings.ReferenceLoopHandling = 
+                    Newtonsoft.Json.ReferenceLoopHandling.Ignore
+                );
+            
+            //Configura a injeção de dependência
+            services.AddScoped<IEventoService, EventoService>();
+            services.AddScoped<IEventoPersist, EventoPersist>();
+            services.AddScoped<IGeralPersist, GeralPersist>();
+
+
 
             //Permite que qualquer aplicação acesse a API
             services.AddCors();
